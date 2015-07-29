@@ -1,0 +1,2 @@
+module WineInfoHelper
+end
