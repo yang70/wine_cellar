@@ -1,0 +1,26 @@
+<h1>Wine List</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Variety</th>
+    <th>Year</th>
+    <th>Winery</th>
+    <th>Quantity</th>
+    <th>Country</th>
+    <th>Region</th>
+    <th>Notes</th>
+  </tr>
+
+  <% @wines.each do |wine| %>
+    <tr>
+      <td class='center'><%= link_to wine.name, wine_path(wine)%></td>
+      <td class='center'><%= wine.variety %></td>
+      <td class='center'><%= wine.year %></td>
+      <td class='center'><%= wine.winery %></td>
+      <td class='center'><%= wine.quantity %></td>
+      <td class='center'><%= wine.country %></td>
+      <td class='center'><%= wine.region %></td>
+      <td class='center'><%= wine.notes %></td>
+    </tr>
+  <% end %>
+</table>
