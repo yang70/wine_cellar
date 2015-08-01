@@ -17,7 +17,7 @@ class WinesController < ApplicationController
   end
 
   def create
-    @wines = Wine.new(robot_params)
+    @wines = Wine.new(wines_params)
 
     if @wines.save
       redirect_to @wines
