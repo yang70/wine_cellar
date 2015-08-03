@@ -1,1 +1,3 @@
 <h1><%= @wines.name %></h1>
+<p><%= link_to 'Destroy', @wines,
+              method: :delete, data: { confirm: 'Are you sure?' } %></p>

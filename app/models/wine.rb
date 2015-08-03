@@ -1,5 +1,8 @@
 class Wine < ActiveRecord::Base
-    has_attached_file :wine_pic, styles: {
+
+  validates :name, presence: true, length: { minimum: 1 }
+
+  has_attached_file :wine_pic, styles: {
     thumb: '100x100>',
     square: '200x200#',
     medium: '300x300>'

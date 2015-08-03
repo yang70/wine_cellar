@@ -22,6 +22,9 @@
       <td class='center'><%= wine.country %></td>
       <td class='center'><%= wine.region %></td>
       <td class='center'><%= wine.notes %></td>
+      <td><%= link_to 'Destroy', wine_path(wine),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>
