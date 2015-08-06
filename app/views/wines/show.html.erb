@@ -3,6 +3,7 @@
 <p><%= link_to 'Destroy', @wines,
               method: :delete, data: { confirm: 'Are you sure?' } %></p>
 <p><%= link_to 'Edit', edit_wine_path(@wines) %></p>
+<p><%= link_to 'Back', wines_path %></p>
 
 <p><%= @wines.variety %></p>
 <p><%= @wines.year %></p>
