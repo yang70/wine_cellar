@@ -1,5 +1,5 @@
 <h1>Edit Wine</h1>
-<%= form_for :wines, url: wines_path do |f| %>
+<%= form_for :wines, url: wine_path(@wines), method: :patch do |f| %>
   <% if @wines.errors.any? %>
     <div id="error_explanation">
       <h2>
