@@ -2,6 +2,7 @@
 <%= link_to 'New Wine', new_wine_path %>
 <table>
   <tr>
+    <th></th>
     <th>Name</th>
     <th>Variety</th>
     <th>Year</th>
@@ -14,6 +15,7 @@
 
   <% @wines.each do |wine| %>
     <tr>
+      <td class='center'><%= image_tag wine.wine_pic.url(:thumb) %>
       <td class='center'><%= link_to wine.name, wine_path(wine)%></td>
       <td class='center'><%= wine.variety %></td>
       <td class='center'><%= wine.year %></td>

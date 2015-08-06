@@ -2,3 +2,11 @@
 <%= image_tag @wines.wine_pic.url(:medium) %>
 <p><%= link_to 'Destroy', @wines,
               method: :delete, data: { confirm: 'Are you sure?' } %></p>
+
+<p><%= @wines.variety %></p>
+<p><%= @wines.year %></p>
+<p><%= @wines.winery %></p>
+<p><%= @wines.quantity %></p>
+<p><%= @wines.country %></p>
+<p><%= @wines.region %></p>
+<p><%= @wines.notes %></p>
