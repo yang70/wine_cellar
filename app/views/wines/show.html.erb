@@ -1,3 +1,4 @@
 <h1><%= @wines.name %></h1>
+<%= image_tag @wines.wine_pic.url %>
 <p><%= link_to 'Destroy', @wines,
               method: :delete, data: { confirm: 'Are you sure?' } %></p>

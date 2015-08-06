@@ -20,7 +20,7 @@ class WinesController < ApplicationController
     @wines = Wine.new(wines_params)
 
     if @wines.save
-      redirect_to @wines
+      redirect_to @wines, notice: 'Wine successfully created.'
     else
       render 'new'
     end
@@ -45,6 +45,6 @@ class WinesController < ApplicationController
 
   private
     def wines_params
-      params.require(:wines).permit(:name, :variety, :year, :winery, :quantity, :country, :region, :notes)
+      params.require(:wines).permit(:wine_pic, :name, :variety, :year, :winery, :quantity, :country, :region, :notes)
     end
 end
