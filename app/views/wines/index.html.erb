@@ -1,6 +1,6 @@
 <h1>Wine List</h1>
 <%= link_to 'New Wine', new_wine_path %>
-<table>
+<table class="table table-hover">
   <tr>
     <th></th>
     <th>Name</th>
@@ -16,14 +16,14 @@
   <% @wines.each do |wine| %>
     <tr>
       <td class='center'><%= link_to image_tag(wine.wine_pic.url(:thumb)), wine_path(wine) %>
-      <td class='center'><%= link_to wine.name, wine_path(wine) %></td>
-      <td class='center'><%= wine.variety %></td>
-      <td class='center'><%= wine.year %></td>
-      <td class='center'><%= wine.winery %></td>
-      <td class='center'><%= wine.quantity %></td>
-      <td class='center'><%= wine.country %></td>
-      <td class='center'><%= wine.region %></td>
-      <td class='center'><%= wine.notes %></td>
+      <td class='thcenter'><%= link_to wine.name, wine_path(wine) %></td>
+      <td class='thcenter'><%= wine.variety %></td>
+      <td class='thcenter'><%= wine.year %></td>
+      <td class='thcenter'><%= wine.winery %></td>
+      <td class='thcenter'><%= wine.quantity %></td>
+      <td class='thcenter'><%= wine.country %></td>
+      <td class='thcenter'><%= wine.region %></td>
+      <td class='thcenter'><%= wine.notes %></td>
     </tr>
   <% end %>
 </table>
