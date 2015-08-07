@@ -1,69 +1,75 @@
-<h1>Edit Wine</h1>
-<%= form_for :wines, url: wine_path(@wines), method: :patch do |f| %>
-  <% if @wines.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@wines.errors.count, "error") %> prohibited
-        this wines from being saved:
-      </h2>
-      <ul>
-        <% @wines.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<body>
+  <%= render 'layouts/header' %>
+  <div class="container">
+    <h1>Edit Wine</h1>
+    <%= form_for :wines, url: wine_path(@wines), method: :patch do |f| %>
+      <% if @wines.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@wines.errors.count, "error") %> prohibited
+            this wines from being saved:
+          </h2>
+          <ul>
+            <% @wines.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-  <p>
-    <%= f.label :wine_pic %>
-    <%= f.file_field :wine_pic %>
-  </p>
+      <p>
+        <%= f.label :wine_pic %>
+        <%= f.file_field :wine_pic %>
+      </p>
 
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
+      <p>
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </p>
 
-  <p>
-    <%= f.label :variety %><br>
-    <%= f.text_area :variety %>
-  </p>
+      <p>
+        <%= f.label :variety %><br>
+        <%= f.text_area :variety %>
+      </p>
 
-  <p>
-    <%= f.label :year, 'year in miles-per-hour' %><br>
-    <%= f.text_area :year %>
-  </p>
+      <p>
+        <%= f.label :year, 'year in miles-per-hour' %><br>
+        <%= f.text_area :year %>
+      </p>
 
-  <p>
-    <%= f.label :winery %><br>
-    <%= f.text_area :winery %>
-  </p>
+      <p>
+        <%= f.label :winery %><br>
+        <%= f.text_area :winery %>
+      </p>
+
+        <p>
+        <%= f.label :quantity %><br>
+        <%= f.text_area :quantity %>
+      </p>
+
+      <p>
+        <%= f.label :country %><br>
+        <%= f.text_area :country %>
+      </p>
+
+      <p>
+        <%= f.label :region %><br>
+        <%= f.text_area :region %>
+      </p>
+
+      <p>
+        <%= f.label :notes %><br>
+        <%= f.text_area :notes %>
+      </p>
+
+      <p>
+        <%= f.submit %>
+      </p>
+    <% end %>
 
     <p>
-    <%= f.label :quantity %><br>
-    <%= f.text_area :quantity %>
-  </p>
-
-  <p>
-    <%= f.label :country %><br>
-    <%= f.text_area :country %>
-  </p>
-
-  <p>
-    <%= f.label :region %><br>
-    <%= f.text_area :region %>
-  </p>
-
-  <p>
-    <%= f.label :notes %><br>
-    <%= f.text_area :notes %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
-
-<p>
-  <%= link_to 'Back', wines_path %>
-</p>
+      <%= link_to 'Back', wines_path %>
+    </p>
+    <%= render 'layouts/footer' %>
+  </div>
+</body>

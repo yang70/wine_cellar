@@ -1,5 +1,11 @@
-<%= image_tag('https://s3.amazonaws.com/mywinebucket/wine-cellar.jpg',
+<body>
+  <%= render 'layouts/header' %>
+  <div class="container">
+    <%= image_tag('https://s3.amazonaws.com/mywinebucket/wine-cellar.jpg',
               :id => 'home') %>
-<h1>My Wine Cellar</h1>
-<a href="/wines">Wine List</a>
+    <h1>My Wine Cellar</h1>
+    <a href="/wines">Wine List</a>
+    <%= render 'layouts/footer' %>
+  </div>
+</body>
 
