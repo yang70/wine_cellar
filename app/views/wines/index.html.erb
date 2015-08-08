@@ -19,7 +19,13 @@
 
         <% @wines.each do |wine| %>
           <tr>
-            <td class='center'><%= link_to image_tag(wine.wine_pic.url(:thumb)),  wine_path(wine) %>
+            <td class='center'>
+              <% if wine.wine_pic.file? %>
+                <%= link_to image_tag(wine.wine_pic.url(:thumb)),  wine_path(wine) %>
+              <% else %>
+                <%= link_to image_tag('https://s3.amazonaws.com/mywinebucket/generic-red.jpg', height: '100', width: '100'), wine_path(wine) %>
+              <% end %>
+            </td>
             <td class='thcenter'><%= link_to wine.name, wine_path(wine) %></td>
             <td class='thcenter'><%= wine.variety %></td>
             <td class='thcenter'><%= wine.year %></td>
