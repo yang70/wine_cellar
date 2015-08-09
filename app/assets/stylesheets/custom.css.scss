@@ -70,3 +70,28 @@ th {
 td {
   text-align: center;
 }
+
+/* Buttons */
+
+.button {
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+  margin: 5px;
+  display: block;
+}
+
+#add {
+  background-color: #d80e00;
+  display: block;
+  margin: 5px auto;
+}
+
+.no-style:hover {
+  text-decoration: none;
+  color: white;
+}

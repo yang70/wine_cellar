@@ -63,13 +63,14 @@
       </p>
 
       <p>
-        <%= f.submit %>
+        <%= f.submit 'Submit', :class => 'button' %>
+        <%= link_to 'Back', wines_path, :class => 'button no-style', :id => 'back' %>
       </p>
     <% end %>
 
-    <p>
-      <%= link_to 'Back', wines_path %>
-    </p>
+
+
+
     <%= render 'layouts/footer' %>
   </div>
 </body>
