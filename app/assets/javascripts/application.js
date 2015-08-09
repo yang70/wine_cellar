@@ -16,7 +16,7 @@
 //= require_tree .
 
 // Make rows in index clickable
-$(function() {
+$(document).on("ready page:change", function() {
   $("tr[data-link]").click(function() {
     window.location = $(this).data("link")
   })
