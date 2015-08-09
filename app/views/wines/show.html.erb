@@ -1,26 +1,32 @@
-<h1><%= @wines.name %></h1>
-<% red_wine = [ 'syrah', 'shiraz', 'merlot', 'cabernet sauvignon', 'malbec', 'pinot noir', 'zinfandel', 'sangiovese', 'barbera'] %>
-<% white_wine = [ 'chardonnay', 'sauvignon blanc', 'semillon', 'moscato', 'pinot grigio', 'gewurztraminer', 'riesling'] %>
-<% if @wines.wine_pic.file? %>
-  <%= image_tag @wines.wine_pic.url(:thumb) %>
-<% else %>
-  <% if red_wine.include?(@wines.variety.downcase) %>
-    <%= image_tag('https://s3.amazonaws.com/mywinebucket/generic-red.jpg', height: '300', width: '300') %>
-  <% elsif white_wine.include?(@wines.variety.downcase) %>
-    <%= image_tag('https://s3.amazonaws.com/mywinebucket/generic-white.jpg', height: '300', width: '300') %>
-  <% else %>
-    <%= image_tag('https://s3.amazonaws.com/mywinebucket/generic-red.jpg', height: '300', width: '300') %>
-  <% end %>
-<% end %>
-<p><%= link_to 'Destroy', @wines,
-              method: :delete, data: { confirm: 'Are you sure?' } %></p>
-<p><%= link_to 'Edit', edit_wine_path(@wines) %></p>
-<p><%= link_to 'Back', wines_path %></p>
+<body>
+  <%= render 'layouts/header' %>
+  <div class="container">
+    <h1><%= @wines.name %></h1>
+    <% red_wine = [ 'syrah', 'shiraz', 'merlot', 'cabernet sauvignon', 'malbec', 'pinot noir', 'zinfandel', 'sangiovese', 'barbera'] %>
+    <% white_wine = [ 'chardonnay', 'sauvignon blanc', 'semillon', 'moscato', 'pinot grigio', 'gewurztraminer', 'riesling'] %>
+    <% if @wines.wine_pic.file? %>
+      <%= image_tag @wines.wine_pic.url(:thumb) %>
+    <% else %>
+      <% if red_wine.include?(@wines.variety.downcase) %>
+        <%= image_tag('https://s3.amazonaws.com/mywinebucket/generic-red.jpg', height: '300', width: '300') %>
+      <% elsif white_wine.include?(@wines.variety.downcase) %>
+        <%= image_tag('https://s3.amazonaws.com/mywinebucket/generic-white.jpg', height: '300', width: '300') %>
+      <% else %>
+        <%= image_tag('https://s3.amazonaws.com/mywinebucket/generic-red.jpg', height: '300', width: '300') %>
+      <% end %>
+    <% end %>
+    <p><%= link_to 'Destroy', @wines,
+                  method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <p><%= link_to 'Edit', edit_wine_path(@wines) %></p>
+    <p><%= link_to 'Back', wines_path %></p>
 
-<p><%= @wines.variety %></p>
-<p><%= @wines.year %></p>
-<p><%= @wines.winery %></p>
-<p><%= @wines.quantity %></p>
-<p><%= @wines.country %></p>
-<p><%= @wines.region %></p>
-<p><%= @wines.notes %></p>
+    <p><%= @wines.variety %></p>
+    <p><%= @wines.year %></p>
+    <p><%= @wines.winery %></p>
+    <p><%= @wines.quantity %></p>
+    <p><%= @wines.country %></p>
+    <p><%= @wines.region %></p>
+    <p><%= @wines.notes %></p>
+    <%= render 'layouts/footer' %>
+  </div>
+</body>

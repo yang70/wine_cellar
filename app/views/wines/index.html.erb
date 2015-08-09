@@ -18,7 +18,7 @@
         </tr>
 
         <% @wines.each do |wine| %>
-          <tr class="clickable-row" data-link="<%= wine_path(wine) %>">
+          <tr data-link="<%= wine_path(wine) %>">
             <td class='center'>
               <% red_wine = [ 'syrah', 'shiraz', 'merlot', 'cabernet sauvignon', 'malbec', 'pinot noir', 'zinfandel', 'sangiovese', 'barbera'] %>
               <% white_wine = [ 'chardonnay', 'sauvignon blanc', 'semillon', 'moscato', 'pinot grigio', 'gewurztraminer', 'riesling'] %>
