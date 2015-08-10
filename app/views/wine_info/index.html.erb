@@ -14,7 +14,19 @@
         <% wine_array << wine %>
       <% end %>
       <% rand_wine = wine_array[rand(wine_array.length)] %>
-      <%= image_tag rand_wine.wine_pic.url(:thumb), :id => "random-wine" %>
+      <% red_wine = [ 'syrah', 'shiraz', 'merlot', 'cabernet sauvignon', 'malbec', 'pinot noir', 'zinfandel', 'sangiovese', 'barbera'] %>
+      <% white_wine = [ 'chardonnay', 'sauvignon blanc', 'semillon', 'moscato', 'pinot grigio', 'gewurztraminer', 'riesling'] %>
+      <% if rand_wine.wine_pic.file? %>
+        <%= image_tag rand_wine.wine_pic.url(:thumb), :id => "random-wine" %>
+      <% else %>
+        <% if red_wine.include?(rand_wine.variety.downcase) %>
+          <%= image_tag('https://s3.amazonaws.com/mywinebucket/generic-red.jpg', height: '100', width: '100') %>
+        <% elsif white_wine.include?(rand_wine.variety.downcase) %>
+          <%= image_tag('https://s3.amazonaws.com/mywinebucket/generic-white.jpg', height: '100', width: '100') %>
+        <% else %>
+          <%= image_tag('https://s3.amazonaws.com/mywinebucket/generic-red.jpg', height: '100', width: '100') %>
+        <% end %>
+      <% end %>
 
     </div>
 
