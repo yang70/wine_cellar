@@ -35,7 +35,7 @@ body {
 
 /* footer */
 footer {
-  margin-top: 45px;
+  margin-top: 10px;
   padding-top: 5px;
   border-top: 1px solid $gray-medium-light;
   color: $gray-light;
@@ -56,6 +56,50 @@ footer {
       margin-left: 15px;
     }
   }
+  clear: left;
+}
+
+/* home page */
+#home-container-left {
+  width: 315px;
+  height: 300px;
+  // border: 1px solid black;
+  margin-right: 5px;
+  margin-bottom: 25px;
+  float: left;
+  padding-left: auto;
+  text-align: center;
+}
+
+#home-container-middle {
+  width: 300px;
+  height: 300px;
+  margin-top: 0px;
+  margin-right: 5px;
+  border: 1px solid black;
+  float: left;
+}
+
+#home-container-right {
+  width: 300px;
+  height: 300px;
+  margin-top: 0px;
+  border: 1px solid black;
+  float: left;
+}
+
+#home-pic {
+  margin-bottom: 5px;
+  width: 300px;
+  height: auto;
+}
+
+#home-title {
+  margin-top: 10px;
+}
+
+#home-list {
+  margin: 5px auto;
 }
 
 /* table */

@@ -1,10 +1,31 @@
 <body>
   <%= render 'layouts/header' %>
   <div class="container">
-    <%= image_tag('https://s3.amazonaws.com/mywinebucket/wine-cellar.jpg',
-              :id => 'home') %>
-    <h1>My Wine Cellar</h1>
-    <%= link_to 'Cellar List', href="/wines", :class => 'button no-style' %>
+    <div id="home-container-left">
+      <%= image_tag('https://s3.amazonaws.com/mywinebucket/wine-cellar.jpg',
+                :id => 'home-pic') %>
+      <h1 id="home-title">My Wine Cellar</h1>
+      <%= link_to 'Cellar List', href="/wines", :class => 'button no-style', :id => 'home-list' %>
+    </div>
+
+    <div id="home-container-middle">
+      <% wine_array = [] %>
+      <% @wines.each do |wine| %>
+        <% wine_array << wine %>
+      <% end %>
+      <% rand_wine = wine_array[rand(wine_array.length)] %>
+      <%= image_tag rand_wine.wine_pic.url(:thumb), :id => "random-wine" %>
+
+    </div>
+
+    <div id="home-container-right">
+
+    </div>
+
+
+
+
+
     <%= render 'layouts/footer' %>
   </div>
 </body>
