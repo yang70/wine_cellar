@@ -19,5 +19,9 @@
 $(document).on("ready page:change", function() {
   $("tr[data-link]").click(function() {
     window.location = $(this).data("link")
-  })
+  });
+
+  $("div[data-link]").click(function() {
+    window.location = $(this).data("link")
+  });
 });
