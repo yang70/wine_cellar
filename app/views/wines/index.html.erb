@@ -41,7 +41,11 @@
             <td class='thcenter'><%= wine.quantity %></td>
             <td class='thcenter'><%= wine.country %></td>
             <td class='thcenter'><%= wine.region %></td>
-            <td class='thcenter'><%= wine.notes %></td>
+            <% if wine.notes.length > 150 %>
+              <td class='thcenter'><%= wine.notes[0..150].rstrip + '...' %></td>
+            <% else %>
+              <td class='thcenter'><%= wine.notes %></td>
+            <% end %>
           </tr>
         <% end %>
       </table>
