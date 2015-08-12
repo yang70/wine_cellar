@@ -1,0 +1,26 @@
+<body>
+  <%= render 'layouts/header' %>
+  <div class="container">
+    <div class="form">
+      <h1>Sign Up</h1>
+      <%= form_for(@user) do |f| %>
+        <p>
+          <%= f.label :username %>
+          <%= f.text_field :username %>
+        </p>
+        <p>
+          <%= f.label :email %>
+          <%= f.email_field :email %>
+        </p>
+        <p>
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+        </p>
+        <p>
+          <%= f.submit "Create Account" %>
+        </p>
+      <% end %>
+    </div>
+    <%= render 'layouts/footer' %>
+  </div>
+</body>
