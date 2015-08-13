@@ -1,4 +1,6 @@
 class WinesController < ApplicationController
+  before_action :require_user, only: [:new, :edit, :create, :update, :destroy]
+  before_action :require_admin, only: [:new, :edit, :create, :update, :destroy]
 
   def index
     @wines = Wine.all
