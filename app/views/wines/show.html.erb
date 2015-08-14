@@ -9,7 +9,7 @@
         <%= image_tag(@wines.wine_pic.url(:medium), height: '300', width: '300', class: "show-pic") %>
       <% else %>
         <% if red_wine.include?(@wines.variety.downcase) %>
-          <%= image_tag('https://s3.amazonaws.com/mywinebucket/generic-red.jpg', height: '300', class: "show-pic") %>
+          <%= image_tag('https://s3.amazonaws.com/mywinebucket/generic-red.jpg', height: '300', width: auto, class: "show-pic") %>
         <% elsif white_wine.include?(@wines.variety.downcase) %>
           <%= image_tag('https://s3.amazonaws.com/mywinebucket/generic-white.jpg', height: '300', width: '300', class: "show-pic") %>
         <% else %>
