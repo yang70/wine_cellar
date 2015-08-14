@@ -6,7 +6,7 @@
       <% red_wine = [ 'syrah', 'shiraz', 'merlot', 'cabernet sauvignon', 'malbec', 'pinot noir', 'zinfandel', 'sangiovese', 'barbera'] %>
       <% white_wine = [ 'chardonnay', 'sauvignon blanc', 'semillon', 'moscato', 'pinot grigio', 'gewurztraminer', 'riesling'] %>
       <% if @wines.wine_pic.file? %>
-        <%= image_tag @wines.wine_pic.url(:medium), class: "show-pic" %>
+        <%= image_tag(@wines.wine_pic.url(:medium), height: '300', width: '300', class: "show-pic") %>
       <% else %>
         <% if red_wine.include?(@wines.variety.downcase) %>
           <%= image_tag('https://s3.amazonaws.com/mywinebucket/generic-red.jpg', height: '300', width: '300', class: "show-pic") %>
