@@ -1,10 +1,10 @@
-<body>
+<body class="background">
   <%= render 'layouts/header' %>
   <div class="container">
+    <h1 id="home-title">My Wine Cellar</h1>
     <div id="home-container-left">
       <%= image_tag('https://s3.amazonaws.com/mywinebucket/wine-cellar.jpg',
                 :id => 'home-pic') %>
-      <h1 id="home-title">My Wine Cellar</h1>
       <%= link_to 'Cellar List', href="/wines", :class => 'button no-style', :id => 'home-list' %>
     </div>
 

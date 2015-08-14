@@ -15,7 +15,7 @@ body .container {
   width: 980px;
 }
 
-#index_background {
+.background {
   background: url(https://s3.amazonaws.com/mywinebucket/grape-vines.png);
   background-size: 100%;
   background-repeat: no-repeat;
@@ -103,6 +103,7 @@ footer {
 
 #home-title {
   margin-top: 10px;
+  text-align: center;
 }
 
 #home-list {
@@ -138,6 +139,22 @@ td {
   text-align: center;
 }
 
+/* Show page */
+#show-page {
+  width: 455px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#show-page h1 {
+  text-align: center;
+}
+
+.show-pic {
+  width: 300px;
+  margin-left: 77px;
+}
+
 /* Buttons */
 
 .button {
@@ -161,6 +178,10 @@ td {
 .no-style:hover {
   text-decoration: none;
   color: white;
+}
+
+.bottom {
+  display: inline-block;
 }
 
 /* Forms */
