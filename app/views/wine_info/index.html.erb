@@ -8,11 +8,7 @@
       <%= link_to 'Cellar List', href="/wines", :class => 'button no-style', :id => 'home-list' %>
     </div>
 
-    <% wine_array = [] %>
-      <% @wines.each do |wine| %>
-        <% wine_array << wine %>
-      <% end %>
-      <% rand_wine = wine_array[rand(wine_array.length)] %>
+      <% rand_wine = Wine.all[rand(Wine.all.length)] %>
 
     <div data-link="<%= wine_path(rand_wine.id) %>" id="home-container-middle">
       <h4 id="random-title">Random Selection</h4>
