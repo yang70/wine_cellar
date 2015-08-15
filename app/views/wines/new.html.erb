@@ -2,75 +2,68 @@
 <body class="background">
   <%= render 'layouts/header' %>
   <div class="container">
-    <h1>Add Wine</h1>
-    <%= form_for :wines, url: wines_path do |f| %>
-      <% if @wines.errors.any? %>
-        <div id="error_explanation">
-          <h2>
-            <%= pluralize(@wines.errors.count, "error") %> prohibited
-            this wines from being saved:
-          </h2>
-          <ul>
-            <% @wines.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-
-      <p>
-        <%= f.label 'Upload Wine Pic' %>
-        <%= f.file_field :wine_pic %>
-      </p>
-
-      <p>
-        <%= f.label :name %><br>
-        <%= f.text_field :name %>
-      </p>
-
-      <p>
-        <%= f.label :variety %><br>
-        <%= f.text_area :variety %>
-      </p>
-
-      <p>
-        <%= f.label :year %><br>
-        <%= f.text_area :year %>
-      </p>
-
-      <p>
-        <%= f.label :winery %><br>
-        <%= f.text_area :winery %>
-      </p>
+    <article class="form-center">
+      <h1>Add Wine</h1>
+      <%= form_for :wines, url: wines_path do |f| %>
+        <% if @wines.errors.any? %>
+          <div id="error_explanation">
+            <h2>
+              <%= pluralize(@wines.errors.count, "error") %> prohibited
+              this wines from being saved:
+            </h2>
+            <ul>
+              <% @wines.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
 
         <p>
-        <%= f.label :quantity %><br>
-        <%= f.text_area :quantity %>
-      </p>
+          <%= f.text_area :name, :placeholder => 'Name', :class => 'addform' %>
+        </p>
 
-      <p>
-        <%= f.label :country %><br>
-        <%= f.text_area :country %>
-      </p>
+        <p>
+          <%= f.text_area :variety, :placeholder => 'Varietal', :class => 'addform' %>
+        </p>
 
-      <p>
-        <%= f.label :region %><br>
-        <%= f.text_area :region %>
-      </p>
+        <p>
+          <%= f.text_area :year, :placeholder => 'Year', :class => 'addform' %>
+        </p>
 
-      <p>
-        <%= f.label :notes %><br>
-        <%= f.text_area :notes %>
-      </p>
+        <p>
+          <%= f.text_area :winery, :placeholder => 'Winery', :class => 'addform' %>
+        </p>
 
-      <p>
-        <%= f.submit 'Submit', :class => 'button no-style' %>
-      </p>
-    <% end %>
+        <p>
+          <%= f.text_area :quantity, :placeholder => 'Quantity', :class => 'addform' %>
+        </p>
 
-    <%= link_to 'Back', wines_path, :class => 'button no-style', :id => 'back' %>
+        <p>
+          <%= f.text_area :country, :placeholder => 'Country', :class => 'addform' %>
+        </p>
 
+        <p>
+          <%= f.text_area :region, :placeholder => 'Region', :class => 'addform' %>
+        </p>
 
+        <p>
+          <%= f.text_area :notes, :placeholder => 'Notes', :class => 'wide-form' %>
+        </p>
+
+        <p id='upload-button'>
+          <%= f.label 'Upload Wine Pic' %>
+          <%= f.file_field :wine_pic %>
+        </p>
+
+        <p>
+          <%= f.submit 'Submit', :class => 'button no-style bottom submit' %>
+          <%= link_to 'Back', wines_path, :class => 'button no-style bottom', :id => 'back' %>
+        </p>
+
+      <% end %>
+
+    </article>
     <%= render 'layouts/footer' %>
   </div>
 </body>

@@ -158,6 +158,17 @@ td {
   margin-right: auto;
 }
 
+/* Add and edit page */
+.form-center {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-center h1 {
+  text-align: center;
+}
+
 /* Buttons */
 
 .button {
@@ -187,12 +198,48 @@ td {
   display: inline-block;
 }
 
+.submit {
+  border: 0px;
+  margin-left: 40px;
+}
+
+#upload-button {
+  // text-align: center;
+  padding-left: 55px;
+}
+
 /* Forms */
 
 .form {
   width: 250px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.addform {
+  width: 300px;
+}
+
+.wide-form {
+  width: 300px;
+  height: 150px;
+}
+
+::-webkit-input-placeholder {
+   text-align: center;
+   font-size: 1.5em;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: red;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: red;
+}
+
+:-ms-input-placeholder {
+   color: red;
 }
 
 /* Unauthorized page */
