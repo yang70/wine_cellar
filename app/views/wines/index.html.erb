@@ -8,14 +8,14 @@
       <table class="table table-hover">
         <tr>
           <th></th>
-          <th>Name</th>
-          <th>Variety</th>
-          <th>Year</th>
-          <th>Winery</th>
-          <th>Quantity</th>
-          <th>Country</th>
-          <th>Region</th>
-          <th>Notes</th>
+          <th><%= link_to 'Name', '/wines', :class => 'button no-style table_header', :id => 'no-margin' %></th>
+          <th><%= link_to 'Varietal', '/wines', :class => 'button no-style table_header', :id => 'no-margin' %></th>
+          <th><%= link_to 'Year', '/wines', :class => 'button no-style table_header', :id => 'no-margin' %></th>
+          <th><%= link_to 'Winery', '/wines', :class => 'button no-style table_header', :id => 'no-margin' %></th>
+          <th><%= link_to 'Quantity', '/wines', :class => 'button no-style table_header', :id => 'no-margin' %></th>
+          <th><%= link_to 'Country', '/wines', :class => 'button no-style table_header', :id => 'no-margin' %></th>
+          <th><%= link_to 'Region', '/wines', :class => 'button no-style table_header', :id => 'no-margin' %></th>
+          <th><%= link_to 'Notes', '/wines', :class => 'button no-style table_header', :id => 'no-margin' %></th>
         </tr>
 
         <% @wines.each do |wine| %>
