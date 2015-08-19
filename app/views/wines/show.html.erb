@@ -1,35 +1,27 @@
-<% provide(:title, @wines.name) %>
+<% provide(:title, @wine.name) %>
 <body class="background">
   <%= render 'layouts/header' %>
   <div class="container">
     <article id="show-page">
-      <h1><%= @wines.name %></h1>
-      <% red_wine = [ 'syrah', 'shiraz', 'merlot', 'cabernet sauvignon', 'malbec', 'pinot noir', 'zinfandel', 'sangiovese', 'barbera'] %>
-      <% white_wine = [ 'chardonnay', 'sauvignon blanc', 'semillon', 'moscato', 'pinot grigio', 'gewurztraminer', 'riesling'] %>
-      <% if @wines.wine_pic.file? %>
-        <%= image_tag(@wines.wine_pic.url(:medium), height: '300', width: '300', class: "show-pic") %>
+      <h1><%= @wine.name %></h1>
+      <% if @wine.wine_pic.file? %>
+        <%= image_tag(@wine.wine_pic.url(:medium), height: '300', width: '300', class: "show-pic") %>
       <% else %>
-        <% if red_wine.include?(@wines.variety.downcase) %>
-          <%= image_tag('https://s3.amazonaws.com/mywinebucket/generic-red.jpg', class: "show-pic") %>
-        <% elsif white_wine.include?(@wines.variety.downcase) %>
-          <%= image_tag('https://s3.amazonaws.com/mywinebucket/generic-white.jpg', class: "show-pic") %>
-        <% else %>
-          <%= image_tag('https://s3.amazonaws.com/mywinebucket/generic-red.jpg', class: "show-pic") %>
-        <% end %>
+          <%= image_tag(red_or_white?(@wine.variety.downcase), class: "show-pic") %>
       <% end %>
 
-      <p><b>Varietal: &nbsp&nbsp&nbsp</b><%= @wines.variety %></p>
-      <p><b>Year: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b><%= @wines.year %></p>
-      <p><b>Winery: &nbsp&nbsp&nbsp&nbsp</b><%= @wines.winery %></p>
-      <p><b>Quantity: &nbsp&nbsp</b><%= @wines.quantity %></p>
-      <p><b>Country: &nbsp&nbsp&nbsp</b><%= @wines.country %></p>
-      <p><b>Region: &nbsp&nbsp&nbsp&nbsp</b><%= @wines.region %></p>
-      <p><b>Notes: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b><%= @wines.notes %></p>
+      <p><b>Varietal: &nbsp&nbsp&nbsp</b><%= @wine.variety %></p>
+      <p><b>Year: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b><%= @wine.year %></p>
+      <p><b>Winery: &nbsp&nbsp&nbsp&nbsp</b><%= @wine.winery %></p>
+      <p><b>Quantity: &nbsp&nbsp</b><%= @wine.quantity %></p>
+      <p><b>Country: &nbsp&nbsp&nbsp</b><%= @wine.country %></p>
+      <p><b>Region: &nbsp&nbsp&nbsp&nbsp</b><%= @wine.region %></p>
+      <p><b>Notes: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b><%= @wine.notes %></p>
 
       <a class="button no-style bottom" href="/">Drink</a>
-      <%= link_to 'Edit', edit_wine_path(@wines), :class => 'button no-style bottom' %>
+      <%= link_to 'Edit', edit_wine_path(@wine), :class => 'button no-style bottom' %>
       <%= link_to 'Back', wines_path, :class => 'button no-style bottom' %>
-      <%= link_to 'Delete', @wines, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button no-style bottom' %>
+      <%= link_to 'Delete', @wine, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button no-style bottom' %>
 
     </article>
     <%= render 'layouts/footer' %>
