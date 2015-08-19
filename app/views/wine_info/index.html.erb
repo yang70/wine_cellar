@@ -14,7 +14,7 @@
       <% if @rand_wine.wine_pic.file? %>
         <%= image_tag @rand_wine.wine_pic.url(:thumb), :id => "random-wine" %>
       <% else %>
-        <%= image_tag(red_or_white?(@rand_wine.variety.downcase), height: '100', width: '100', :id => "random-wine") %>
+        <%= image_tag(red_or_white(@rand_wine.variety.downcase), height: '100', width: '100', :id => "random-wine") %>
       <% end %>
       <p class="random-text"><%= @rand_wine.name %></p>
       <p class="random-text"><%= @rand_wine.variety %></p>

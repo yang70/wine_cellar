@@ -7,7 +7,7 @@
       <% if @wine.wine_pic.file? %>
         <%= image_tag(@wine.wine_pic.url(:medium), height: '300', width: '300', class: "show-pic") %>
       <% else %>
-          <%= image_tag(red_or_white?(@wine.variety.downcase), class: "show-pic") %>
+          <%= image_tag(red_or_white(@wine.variety.downcase), class: "show-pic") %>
       <% end %>
 
       <p><b>Varietal: &nbsp&nbsp&nbsp</b><%= @wine.variety %></p>

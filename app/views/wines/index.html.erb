@@ -24,7 +24,7 @@
               <% if wine.wine_pic.file? %>
                 <%= link_to image_tag(wine.wine_pic.url(:thumb)),  wine_path(wine) %>
               <% else %>
-                  <%= link_to image_tag(red_or_white?(wine.variety.downcase), height: '100', width: '100'), wine_path(wine) %>
+                  <%= link_to image_tag(red_or_white(wine.variety.downcase), height: '100', width: '100'), wine_path(wine) %>
               <% end %>
             </td>
             <td class='thcenter'><%= link_to wine.name, wine_path(wine) %></td>

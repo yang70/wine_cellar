@@ -4,8 +4,6 @@ class WinesController < ApplicationController
 
   def index
     @wines = Wine.all
-    @red_wine = [ 'syrah', 'shiraz', 'merlot', 'cabernet sauvignon', 'malbec', 'pinot noir', 'zinfandel', 'sangiovese', 'barbera']
-    @white_wine = [ 'chardonnay', 'sauvignon blanc', 'semillon', 'moscato', 'pinot grigio', 'gewurztraminer', 'riesling']
   end
 
   def show
